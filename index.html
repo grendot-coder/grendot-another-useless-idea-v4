@@ -10,13 +10,11 @@
 
 <body>
 
-  <!-- Retro CRT Scanline & Phosphor Overlay -->
+
   <div class="crt-overlay"></div>
 
-  <!-- Main Desktop Workspace -->
   <main class="desktop-area">
 
-    <!-- Desktop Icons (Single click / tap to launch) -->
     <div class="desktop-icons">
       <div class="desktop-icon" data-target="win-about" data-icon="about">
         <div class="icon-graphic">
@@ -75,7 +73,7 @@
       </div>
     </div>
 
-    <!-- DESKTOP GADGET: 90s POST-IT STICKY NOTE (BILINGUAL) -->
+    <!-- GUIDE LAH -->
     <div class="sticky-note" id="stickyNote" style="top: 28px; right: 28px; transform: rotate(1.2deg);">
       <div class="sticky-tape"></div>
       <div class="sticky-header">
@@ -85,7 +83,7 @@
         <button class="sticky-lang-toggle" id="stickyLangBtn" title="Switch Language / Ganti Bahasa">ID 🇮🇩</button>
       </div>
 
-      <!-- English Content -->
+      <!-- English -->
       <div class="sticky-body" id="stickyTextEn">
         <h4>Quick Guide</h4>
         <p>Weii! This site is my portofolio that is heavily inspired by <strong>Windows 3.1</strong> desktop
@@ -101,7 +99,7 @@
         </div>
       </div>
 
-      <!-- Indonesian Content -->
+      <!-- Indonesian -->
       <div class="sticky-body" id="stickyTextId" style="display: none;">
         <h4>💡 Panduan Pengunjung</h4>
         <p>Weii! Ini Web Portofolio saya yang sangat inspired-by <strong>Windows 3.1</strong> klasik:</p>
@@ -118,7 +116,7 @@
     </div>
 
 
-    <!-- WINDOW 1: ABOUT ME (OPEN BY DEFAULT) -->
+    <!-- ABOUT ME -->
     <section class="window active" id="win-about" style="top: 30px; left: 110px; width: 440px;">
       <div class="window-titlebar">
         <div class="window-title">
@@ -166,7 +164,7 @@
       </div>
     </section>
 
-    <!-- WINDOW 2: RUPA.EXE (ASCII MATRIX CANVAS) -->
+    <!-- ASCII -->
     <section class="window" id="win-rupa" style="top: 60px; left: 470px; width: 560px; height: 530px;">
       <div class="window-titlebar">
         <div class="window-title">
@@ -197,9 +195,7 @@
       </div>
     </section>
 
-    <!-- ================================================================= -->
     <!-- WINDOW 3: PROJECTS (FILE MANAGER STYLE) -->
-    <!-- ================================================================= -->
     <section class="window" id="win-projects"
       style="top: 100px; left: 160px; width: 620px; height: 460px; display: none;">
       <div class="window-titlebar">
@@ -221,7 +217,7 @@
       </div>
       <div class="window-body" style="padding: 6px;">
         <div class="file-manager">
-          <!-- Folder Tree sidebar -->
+          <!-- Folder sidebar -->
           <div class="fm-tree bevel-inset">
             <div class="tree-node active">📁 C:\PROJECTS</div>
             <div class="tree-node" style="padding-left: 18px;">📁 WEB_APPS</div>
@@ -232,7 +228,6 @@
 
           <!-- Project file cards list -->
           <div class="fm-file-list bevel-inset" id="projectsContainer">
-            <!-- Dynamically populated or rendered -->
             <div class="project-card-win bevel-outset">
               <img src="img/web.png" class="project-img-preview" alt="RPL2">
               <div class="project-details">
@@ -293,9 +288,7 @@
       </div>
     </section>
 
-    <!-- ================================================================= -->
-    <!-- WINDOW 4: SKILLS & MANIFESTO -->
-    <!-- ================================================================= -->
+    <!-- Knowledge -->
     <section class="window" id="win-skills" style="top: 130px; left: 240px; width: 440px; display: none;">
       <div class="window-titlebar">
         <div class="window-title">
@@ -327,9 +320,7 @@
       </div>
     </section>
 
-    <!-- ================================================================= -->
-    <!-- WINDOW 5: CONTACT DIALOG -->
-    <!-- ================================================================= -->
+    <!-- Contact -->
     <section class="window" id="win-contact" style="top: 150px; left: 200px; width: 400px; display: none;">
       <div class="window-titlebar">
         <div class="window-title">
@@ -376,7 +367,7 @@
 
   </main>
 
-  <!-- Start Menu Dropup -->
+  <!-- Start menu -->
   <div class="start-menu" id="startMenu">
     <div class="start-menu-banner">
       <span>Whatever 3.1</span>
@@ -402,7 +393,7 @@
     </a>
   </div>
 
-  <!-- Bottom Taskbar -->
+  <!-- Taskbar bawah -->
   <footer class="taskbar">
     <button class="retro-btn start-btn" id="startBtn">
       <span id="startBtnIcon" style="display: inline-flex; align-items: center; justify-content: center;">
@@ -425,7 +416,7 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Scriptnya -->
   <script src="js/config.js"></script>
   <script src="js/ascii_data.js"></script>
   <script src="js/window_manager.js"></script>
@@ -436,14 +427,11 @@
       const cfg = window.PORTFOLIO_CONFIG;
       if (!cfg) return;
 
-      // 1. Meta
       if (cfg.meta && cfg.meta.title) {
         document.title = cfg.meta.title;
       }
 
-      // 2. Custom Icons & Logos
       if (cfg.images) {
-        // Start Button Logo
         const startIconSrc = cfg.images.startLogo || (cfg.images.startLogo === "" ? "" : cfg.images.logoMark);
         if (startIconSrc && startIconSrc.trim() !== '') {
           const startIconEl = document.getElementById('startBtnIcon');
@@ -452,7 +440,6 @@
           }
         }
 
-        // Window Titlebar Icon
         if (cfg.images.logoMark && cfg.images.logoMark.trim() !== '') {
           document.querySelectorAll('.window-title-icon').forEach(img => {
             img.src = cfg.images.logoMark;
@@ -511,7 +498,6 @@
         }
       }
 
-      // 5. Skills & Principles (No arbitrary bars or percentages)
       if (cfg.skills) {
         const skillsContainer = document.getElementById('skillsCategoryContainer');
         if (skillsContainer && cfg.skills.categories) {
@@ -565,7 +551,7 @@
         }
       }
 
-      // 7. Sticky Note (Bilingual)
+      //Sticky Note 
       if (cfg.stickyNote) {
         const textEn = document.getElementById('stickyTextEn');
         const textId = document.getElementById('stickyTextId');
@@ -596,7 +582,6 @@
       }
     })();
 
-    // Hook quick shockwave button if present
     const quickBtn = document.getElementById('btnScrambleQuick');
     if (quickBtn) {
       quickBtn.addEventListener('click', () => {
