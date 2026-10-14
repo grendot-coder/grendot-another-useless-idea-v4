@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grendy Agusti — Portfolio</title>
+  <link rel="stylesheet" href="css/win31.css">
+</head>
+
+<body>
+
+  <!-- Retro CRT Scanline & Phosphor Overlay -->
+  <div class="crt-overlay"></div>
+
+  <!-- Main Desktop Workspace -->
+  <main class="desktop-area">
+
+    <!-- Desktop Icons (Single click / tap to launch) -->
+    <div class="desktop-icons">
+      <div class="desktop-icon" data-target="win-about" data-icon="about">
+        <div class="icon-graphic">
+          <svg width="32" height="32" viewBox="0 0 32 32">
+            <rect x="4" y="2" width="24" height="28" fill="#fff" stroke="#1a1815" stroke-width="2" />
+            <rect x="8" y="6" width="16" height="2" fill="#000080" />
+            <rect x="8" y="11" width="16" height="2" fill="#5a544b" />
+            <rect x="8" y="16" width="12" height="2" fill="#5a544b" />
+            <rect x="8" y="21" width="14" height="2" fill="#5a544b" />
+          </svg>
+        </div>
+        <span class="icon-label">About_Me.txt</span>
+      </div>
+
+      <div class="desktop-icon" data-target="win-projects" data-icon="projects">
+        <div class="icon-graphic">
+          <svg width="32" height="32" viewBox="0 0 32 32">
+            <path d="M2 8 L12 8 L16 12 L30 12 L30 26 L2 26 Z" fill="#e6c86e" stroke="#1a1815" stroke-width="2" />
+            <path d="M2 12 L30 12 L26 26 L2 26 Z" fill="#ffd97d" stroke="#1a1815" stroke-width="1.5" />
+          </svg>
+        </div>
+        <span class="icon-label">Projects</span>
+      </div>
+
+      <div class="desktop-icon" data-target="win-rupa" data-icon="rupa">
+        <div class="icon-graphic">
+          <svg width="32" height="32" viewBox="0 0 32 32">
+            <rect x="2" y="4" width="28" height="24" fill="#333" stroke="#1a1815" stroke-width="2" />
+            <rect x="5" y="7" width="22" height="15" fill="#141210" />
+            <text x="7" y="18" fill="#e8485f" font-family="monospace" font-size="11" font-weight="bold">ASCII</text>
+            <rect x="10" y="24" width="12" height="2" fill="#fff" />
+          </svg>
+        </div>
+        <span class="icon-label">RUPA.EXE</span>
+      </div>
+
+      <div class="desktop-icon" data-target="win-skills" data-icon="skills">
+        <div class="icon-graphic">
+          <svg width="32" height="32" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="12" fill="#ded6c5" stroke="#1a1815" stroke-width="2" />
+            <path d="M16 8 L16 16 L22 16" stroke="#000080" stroke-width="2.5" fill="none" />
+            <circle cx="16" cy="16" r="3" fill="#c25975" />
+          </svg>
+        </div>
+        <span class="icon-label">Skills.cpl</span>
+      </div>
+
+      <div class="desktop-icon" data-target="win-contact" data-icon="contact">
+        <div class="icon-graphic">
+          <svg width="32" height="32" viewBox="0 0 32 32">
+            <rect x="3" y="6" width="26" height="20" fill="#fff" stroke="#1a1815" stroke-width="2" />
+            <polyline points="4,7 16,17 28,7" stroke="#1a1815" stroke-width="2" fill="none" />
+          </svg>
+        </div>
+        <span class="icon-label">Mail_Me</span>
+      </div>
+    </div>
+
+    <!-- DESKTOP GADGET: 90s POST-IT STICKY NOTE (BILINGUAL) -->
+    <div class="sticky-note" id="stickyNote" style="top: 28px; right: 28px; transform: rotate(1.2deg);">
+      <div class="sticky-tape"></div>
+      <div class="sticky-header">
+        <div class="sticky-pin">
+          <strong>POST-IT NOTES v1.2</strong>
+        </div>
+        <button class="sticky-lang-toggle" id="stickyLangBtn" title="Switch Language / Ganti Bahasa">ID 🇮🇩</button>
+      </div>
+
+      <!-- English Content -->
+      <div class="sticky-body" id="stickyTextEn">
+        <h4>Quick Guide</h4>
+        <p>Weii! This site is my portofolio that is heavily inspired by <strong>Windows 3.1</strong> desktop
+          environment:</p>
+        <ul>
+          <li><strong>Single-Click:</strong> Click any desktop icon or window button to launch it.</li>
+          <li><strong>Move & Organize Note:</strong> Drag the note by its top bar.</li>
+          <li><strong>Start Menu:</strong> Access all shortcuts from the bottom-left <em>Start</em> button.</li>
+          <li><strong>RUPA.EXE:</strong> Hover your mouse over Rupa to distort the live ASCII art matrix.</li>
+        </ul>
+        <div style="margin-top: 8px; font-size: 10px; color: #736214;">
+          <em>Tip: Drag this note anywhere by its top bar!</em>
+        </div>
+      </div>
+
+      <!-- Indonesian Content -->
+      <div class="sticky-body" id="stickyTextId" style="display: none;">
+        <h4>💡 Panduan Pengunjung</h4>
+        <p>Weii! Ini Web Portofolio saya yang sangat inspired-by <strong>Windows 3.1</strong> klasik:</p>
+        <ul>
+          <li><strong>Klik Sekali:</strong> Klik ikon desktop atau menu untuk membuka aplikasi.</li>
+          <li><strong>Geser Notes:</strong> Tahan & geser bar judul diatas untuk memindahkan note ini.</li>
+          <li><strong>Menu Start:</strong> Akses cepat seluruh menu dari tombol <em>Start</em> di kiri bawah.</li>
+          <li><strong>RUPA.EXE:</strong> Gerakkan kursor ke Rupa untuk melihat efek distorsi partikel ASCII.</li>
+        </ul>
+        <div style="margin-top: 8px; font-size: 10px; color: #736214;">
+          <em>Tips: Catatan ini bisa digeser ke mana saja!</em>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- WINDOW 1: ABOUT ME (OPEN BY DEFAULT) -->
+    <section class="window active" id="win-about" style="top: 30px; left: 110px; width: 440px;">
+      <div class="window-titlebar">
+        <div class="window-title">
+          <img src="img/logo.jpeg" class="window-title-icon" alt="">
+          <span>Notepad - ABOUT_ME.TXT</span>
+        </div>
+        <div class="window-controls">
+          <button class="win-ctrl-btn win-btn-min" title="Minimize">▼</button>
+          <button class="win-ctrl-btn win-btn-max" title="Maximize">▲</button>
+          <button class="win-ctrl-btn win-btn-close" title="Close">×</button>
+        </div>
+      </div>
+      <div class="window-menubar">
+        <span class="menu-item"><u>F</u>ile</span>
+        <span class="menu-item"><u>E</u>dit</span>
+        <span class="menu-item"><u>S</u>earch</span>
+        <span class="menu-item"><u>H</u>elp</span>
+      </div>
+      <div class="window-body bevel-inset"
+        style="background: #fff; font-family: 'JetBrains Mono', Consolas, monospace; font-size: 12px; line-height: 1.6;">
+        <h2 id="aboutName" style="font-size: 15px; color: #000080; margin-bottom: 6px;">GRENDY ARVEL PUTRA AGUSTI</h2>
+        <p id="aboutRole" style="color: #666; margin-bottom: 12px;">Frontend & Fullstack Developer · Balitar, ID</p>
+        <p id="aboutBio1" style="margin-bottom: 10px;">
+          Welcome to my retro desktop! I build (not so)responsive web applications, creative interactive interfaces, and
+          (not so)clean backends. Im trying to be better tho.
+        </p>
+        <p id="aboutBio2" style="margin-bottom: 14px;">
+          I like trying new thing i just discovered, albeit massively helped by AI(Thanks Agy).
+        </p>
+        <div style="background: #f4eee2; border: 1px dashed #8c8270; padding: 8px 10px; margin-bottom: 14px;">
+          <strong>Quick Navigation:</strong><br>
+          • Check out <a href="javascript:void(0)" onclick="window.Win31.openWindow('win-projects')"
+            style="color:#000080;">Projects</a> (File Manager)<br>
+          • Launch <a href="javascript:void(0)" onclick="window.Win31.openWindow('win-rupa')"
+            style="color:#c25975;">RUPA.EXE</a> for the animated ASCII art<br>
+          • Send an email via <a href="javascript:void(0)" onclick="window.Win31.openWindow('win-contact')"
+            style="color:#000080;">Mail_Me</a>
+        </div>
+        <button id="aboutBtn" class="retro-btn" onclick="window.Win31.openWindow('win-projects')">Explore Projects
+          &gt;&gt;</button>
+      </div>
+      <div class="window-statusbar">
+        <span>Lines: 24, Cols: 80</span>
+        <span>DOS / UTF-8</span>
+      </div>
+    </section>
+
+    <!-- WINDOW 2: RUPA.EXE (ASCII MATRIX CANVAS) -->
+    <section class="window" id="win-rupa" style="top: 60px; left: 470px; width: 560px; height: 530px;">
+      <div class="window-titlebar">
+        <div class="window-title">
+          <span>RUPA.EXE</span>
+        </div>
+        <div class="window-controls">
+          <button class="win-ctrl-btn win-btn-min" title="Minimize">▼</button>
+          <button class="win-ctrl-btn win-btn-max" title="Maximize">▲</button>
+          <button class="win-ctrl-btn win-btn-close" title="Close">×</button>
+        </div>
+      </div>
+      <div class="window-menubar">
+        <span class="menu-item" id="btnScramble"><u>R</u>un Scramble</span>
+        <span class="menu-item" id="btnFreeze"><u>F</u>reeze Frame</span>
+        <span class="menu-item" id="btnCrtToggle">CRT: ON</span>
+      </div>
+      <div class="window-body" style="padding: 6px; display: flex; flex-direction: column;">
+        <div class="ascii-canvas-wrapper bevel-inset">
+          <canvas id="matrixCanvas"></canvas>
+        </div>
+        <div class="ascii-controls">
+          <span style="font-size: 11px; color: #5a544b;">Hover cursor over Rupa to distort ASCII characters</span>
+        </div>
+      </div>
+      <div class="window-statusbar">
+        <span>Character: Rupa (Girls Band Cry)</span>
+        <span>Resolution: 140x84 pixels</span>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- WINDOW 3: PROJECTS (FILE MANAGER STYLE) -->
+    <!-- ================================================================= -->
+    <section class="window" id="win-projects"
+      style="top: 100px; left: 160px; width: 620px; height: 460px; display: none;">
+      <div class="window-titlebar">
+        <div class="window-title">
+          <span>File Manager - [C:\PROJECTS\*.*]</span>
+        </div>
+        <div class="window-controls">
+          <button class="win-ctrl-btn win-btn-min" title="Minimize">▼</button>
+          <button class="win-ctrl-btn win-btn-max" title="Maximize">▲</button>
+          <button class="win-ctrl-btn win-btn-close" title="Close">×</button>
+        </div>
+      </div>
+      <div class="window-menubar">
+        <span class="menu-item"><u>F</u>ile</span>
+        <span class="menu-item"><u>D</u>isk</span>
+        <span class="menu-item"><u>T</u>ree</span>
+        <span class="menu-item"><u>V</u>iew</span>
+        <span class="menu-item"><u>O</u>ptions</span>
+      </div>
+      <div class="window-body" style="padding: 6px;">
+        <div class="file-manager">
+          <!-- Folder Tree sidebar -->
+          <div class="fm-tree bevel-inset">
+            <div class="tree-node active">📁 C:\PROJECTS</div>
+            <div class="tree-node" style="padding-left: 18px;">📁 WEB_APPS</div>
+            <div class="tree-node" style="padding-left: 18px;">📁 ECOMMERCE</div>
+            <div class="tree-node" style="padding-left: 18px;">📁 SHOWCASES</div>
+            <div class="tree-node" style="padding-left: 18px;">📁 EXPERIMENTS</div>
+          </div>
+
+          <!-- Project file cards list -->
+          <div class="fm-file-list bevel-inset" id="projectsContainer">
+            <!-- Dynamically populated or rendered -->
+            <div class="project-card-win bevel-outset">
+              <img src="img/web.png" class="project-img-preview" alt="RPL2">
+              <div class="project-details">
+                <h4>RPL 2 Class Website (2026)</h4>
+                <p>A class portal designed and worked by 12 unemployed students with custom CSS Grid and responsive
+                  showcases.</p>
+                <div>
+                  <span class="badge-tag">JavaScript</span>
+                  <span class="badge-tag">CSS Grid</span>
+                  <span class="badge-tag">Responsive</span>
+                </div>
+                <div style="margin-top: 8px;">
+                  <a href="https://xirpl2smkbrantas-website.vercel.app/" target="_blank" class="retro-btn"
+                    style="text-decoration: none;">Launch App ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card-win bevel-outset">
+              <img src="img/buket.png" class="project-img-preview" alt="Bloom">
+              <div class="project-details">
+                <h4>Andari Bouquet Shop (2026)</h4>
+                <p>An e-commerce landing page crafted for my mom,a local florist with product browsing and direct
+                  ordering. <b>(Early Dev)</b></p>
+                <div>
+                  <span class="badge-tag">JavaScript</span>
+                  <span class="badge-tag">Modern CSS</span>
+                  <span class="badge-tag">UI/UX</span>
+                </div>
+                <div style="margin-top: 8px;">
+                  <a href="#" class="retro-btn" style="text-decoration: none;">View Catalog ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card-win bevel-outset">
+              <img src="img/landing.png" class="project-img-preview" alt="Toge">
+              <div class="project-details">
+                <h4>Toge Productions Showcase (2026)</h4>
+                <p>A game studio landing showcase highlighting releases and multimedia assets. </p>
+                <div>
+                  <span class="badge-tag">HTML5</span>
+                  <span class="badge-tag">CSS3</span>
+                  <span class="badge-tag">Typography</span>
+                </div>
+                <div style="margin-top: 8px;">
+                  <a href="https://drive.google.com/drive/folders/1WA-0xtVuj2vODOM_cZhSO9rmrPRsxZuY?usp=drive_link"
+                    target="_blank" class="retro-btn" style="text-decoration: none;">View Drive ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="window-statusbar">
+        <span>3 Projects selected</span>
+        <span>Total disk space: 640 KB</span>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- WINDOW 4: SKILLS & MANIFESTO -->
+    <!-- ================================================================= -->
+    <section class="window" id="win-skills" style="top: 130px; left: 240px; width: 440px; display: none;">
+      <div class="window-titlebar">
+        <div class="window-title">
+          <span>Control Panel - Knowledge</span>
+        </div>
+        <div class="window-controls">
+          <button class="win-ctrl-btn win-btn-min" title="Minimize">▼</button>
+          <button class="win-ctrl-btn win-btn-max" title="Maximize">▲</button>
+          <button class="win-ctrl-btn win-btn-close" title="Close">×</button>
+        </div>
+      </div>
+      <div class="window-body bevel-inset" style="padding: 14px; background: #fff;">
+        <h3
+          style="font-size: 13px; margin-bottom: 12px; color: #000080; border-bottom: 1px solid #ded6c5; padding-bottom: 4px;">
+          Technical Skills &amp; Proficiencies</h3>
+        <div id="skillsCategoryContainer">
+          <!-- Populated from config.js -->
+        </div>
+
+        <h4 id="principlesHeader" style="font-size: 12px; margin-top: 14px; margin-bottom: 6px; color: #000080;">
+          Development Principles:</h4>
+        <ul id="principlesContainer" style="padding-left: 18px; font-size: 11px; color: #333; line-height: 1.6;">
+          <!-- Populated from config.js -->
+        </ul>
+      </div>
+      <div class="window-statusbar">
+        <span id="skillsRamStatus">RAM: 16 MB Installed</span>
+        <span id="skillsOsStatus">OS: Wtv3.1 Enhanced Mode</span>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- WINDOW 5: CONTACT DIALOG -->
+    <!-- ================================================================= -->
+    <section class="window" id="win-contact" style="top: 150px; left: 200px; width: 400px; display: none;">
+      <div class="window-titlebar">
+        <div class="window-title">
+          <span>MAIL ME</span>
+        </div>
+        <div class="window-controls">
+          <button class="win-ctrl-btn win-btn-close" title="Close">×</button>
+        </div>
+      </div>
+      <div class="window-body bevel-outset" style="padding: 12px;">
+        <form action="https://formspree.io/f/mjgnjbkr" method="POST"
+          style="display: flex; flex-direction: column; gap: 8px;">
+          <div>
+            <label style="font-size: 11px; font-weight: bold; display: block; margin-bottom: 2px;">To:</label>
+            <input type="text" value="grendy.xpplg2@gmail.com" readonly class="bevel-inset"
+              style="width: 100%; padding: 4px; font-family: inherit; font-size: 11px; background: #ece6da;">
+          </div>
+          <div>
+            <label style="font-size: 11px; font-weight: bold; display: block; margin-bottom: 2px;">Your Name:</label>
+            <input type="text" name="name" required class="bevel-inset"
+              style="width: 100%; padding: 4px; font-family: inherit; font-size: 11px;">
+          </div>
+          <div>
+            <label style="font-size: 11px; font-weight: bold; display: block; margin-bottom: 2px;">Your Email:</label>
+            <input type="email" name="email" required class="bevel-inset"
+              style="width: 100%; padding: 4px; font-family: inherit; font-size: 11px;">
+          </div>
+          <div>
+            <label style="font-size: 11px; font-weight: bold; display: block; margin-bottom: 2px;">Message:</label>
+            <textarea name="message" rows="4" required class="bevel-inset"
+              style="width: 100%; padding: 4px; font-family: inherit; font-size: 11px;"></textarea>
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 6px;">
+            <button type="submit" class="retro-btn">Send Message 📨</button>
+            <button type="button" class="retro-btn" onclick="window.Win31.closeWindow('win-contact')">Cancel</button>
+          </div>
+        </form>
+      </div>
+      <div class="window-statusbar">
+        <span>GitHub: <a href="https://github.com/grendot-coder" target="_blank"
+            style="color: #000080;">@grendot-coder</a></span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Start Menu Dropup -->
+  <div class="start-menu" id="startMenu">
+    <div class="start-menu-banner">
+      <span>Whatever 3.1</span>
+    </div>
+    <div class="start-menu-item" onclick="window.Win31.openWindow('win-about'); window.Win31.closeStartMenu();">
+      <span>About_Me.txt</span>
+    </div>
+    <div class="start-menu-item" onclick="window.Win31.openWindow('win-projects'); window.Win31.closeStartMenu();">
+      <span>Projects (File Manager)</span>
+    </div>
+    <div class="start-menu-item" onclick="window.Win31.openWindow('win-rupa'); window.Win31.closeStartMenu();">
+      <span>RUPA.EXE (ASCII Art)</span>
+    </div>
+    <div class="start-menu-item" onclick="window.Win31.openWindow('win-skills'); window.Win31.closeStartMenu();">
+      <span>Skills & System Info</span>
+    </div>
+    <div class="start-menu-item" onclick="window.Win31.openWindow('win-contact'); window.Win31.closeStartMenu();">
+      <span>Send Mail / Contact</span>
+    </div>
+    <div class="start-menu-divider"></div>
+    <a href="https://github.com/grendot-coder" target="_blank" class="start-menu-item">
+      <span>Visit GitHub Profile ↗</span>
+    </a>
+  </div>
+
+  <!-- Bottom Taskbar -->
+  <footer class="taskbar">
+    <button class="retro-btn start-btn" id="startBtn">
+      <span id="startBtnIcon" style="display: inline-flex; align-items: center; justify-content: center;">
+        <svg width="14" height="14" viewBox="0 0 16 16">
+          <rect x="1" y="1" width="6" height="6" fill="#e8485f" />
+          <rect x="9" y="1" width="6" height="6" fill="#000080" />
+          <rect x="1" y="9" width="6" height="6" fill="#008000" />
+          <rect x="9" y="9" width="6" height="6" fill="#e6c86e" />
+        </svg>
+      </span>
+      <span>Start</span>
+    </button>
+
+    <div class="taskbar-windows" id="taskbarWindows">
+      <!-- Generated dynamically by window_manager.js -->
+    </div>
+
+    <div class="taskbar-tray bevel-inset">
+      <span id="taskbarClock">12:00</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/ascii_data.js"></script>
+  <script src="js/window_manager.js"></script>
+  <script src="js/ascii_app.js"></script>
+  <script>
+    // Dynamically apply and render content from config.js
+    (function initPortfolioFromConfig() {
+      const cfg = window.PORTFOLIO_CONFIG;
+      if (!cfg) return;
+
+      // 1. Meta
+      if (cfg.meta && cfg.meta.title) {
+        document.title = cfg.meta.title;
+      }
+
+      // 2. Custom Icons & Logos
+      if (cfg.images) {
+        // Start Button Logo
+        const startIconSrc = cfg.images.startLogo || (cfg.images.startLogo === "" ? "" : cfg.images.logoMark);
+        if (startIconSrc && startIconSrc.trim() !== '') {
+          const startIconEl = document.getElementById('startBtnIcon');
+          if (startIconEl) {
+            startIconEl.innerHTML = `<img src="${startIconSrc}" width="16" height="16" style="image-rendering: pixelated; object-fit: contain;" alt="Start" />`;
+          }
+        }
+
+        // Window Titlebar Icon
+        if (cfg.images.logoMark && cfg.images.logoMark.trim() !== '') {
+          document.querySelectorAll('.window-title-icon').forEach(img => {
+            img.src = cfg.images.logoMark;
+          });
+        }
+
+        // Desktop Icons
+        if (cfg.images.icons) {
+          document.querySelectorAll('.desktop-icon[data-icon]').forEach(iconEl => {
+            const key = iconEl.getAttribute('data-icon');
+            const customSrc = cfg.images.icons[key];
+            if (customSrc && customSrc.trim() !== '') {
+              const graphicEl = iconEl.querySelector('.icon-graphic');
+              if (graphicEl) {
+                graphicEl.innerHTML = `<img src="${customSrc}" alt="${key}" />`;
+              }
+            }
+          });
+        }
+      }
+
+      // 3. About Me Window
+      if (cfg.about) {
+        const nameEl = document.getElementById('aboutName');
+        const roleEl = document.getElementById('aboutRole');
+        const bio1El = document.getElementById('aboutBio1');
+        const bio2El = document.getElementById('aboutBio2');
+        const btnEl = document.getElementById('aboutBtn');
+
+        if (nameEl && cfg.about.name) nameEl.innerText = cfg.about.name;
+        if (roleEl && cfg.about.role) roleEl.innerText = cfg.about.role;
+        if (bio1El && cfg.about.bio1) bio1El.innerText = cfg.about.bio1;
+        if (bio2El && cfg.about.bio2) bio2El.innerText = cfg.about.bio2;
+        if (btnEl && cfg.about.buttonLabel) btnEl.innerText = cfg.about.buttonLabel;
+      }
+
+      // 4. Projects (File Manager)
+      if (cfg.projects && Array.isArray(cfg.projects)) {
+        const container = document.getElementById('projectsContainer');
+        if (container) {
+          container.innerHTML = cfg.projects.map(p => `
+            <div class="project-card-win bevel-outset">
+              <img src="${p.image}" class="project-img-preview" alt="${p.title}" />
+              <div class="project-details">
+                <h4>${p.title}</h4>
+                <p>${p.description}</p>
+                <div>
+                  ${(p.tech || []).map(t => `<span class="badge-tag">${t}</span>`).join('')}
+                </div>
+                <div style="margin-top: 8px;">
+                  <a href="${p.link}" target="_blank" class="retro-btn" style="text-decoration: none;">${p.linkLabel || 'Launch App ↗'}</a>
+                </div>
+              </div>
+            </div>
+          `).join('');
+        }
+      }
+
+      // 5. Skills & Principles (No arbitrary bars or percentages)
+      if (cfg.skills) {
+        const skillsContainer = document.getElementById('skillsCategoryContainer');
+        if (skillsContainer && cfg.skills.categories) {
+          skillsContainer.innerHTML = cfg.skills.categories.map(cat => `
+            <div class="skill-category">
+              <div class="skill-category-title">${cat.name}</div>
+              <div class="skill-tags-group">
+                ${cat.tags.map(t => `<span class="skill-pill">🏷️ ${t}</span>`).join('')}
+              </div>
+            </div>
+          `).join('');
+        }
+
+        const principlesContainer = document.getElementById('principlesContainer');
+        if (principlesContainer && cfg.skills.principles) {
+          principlesContainer.innerHTML = cfg.skills.principles.map(item => `
+            <li>${item}</li>
+          `).join('');
+        }
+
+        if (cfg.skills.principlesTitle) {
+          const header = document.getElementById('principlesHeader');
+          if (header) header.innerText = cfg.skills.principlesTitle;
+        }
+
+        if (cfg.skills.statusInfo) {
+          const ramEl = document.getElementById('skillsRamStatus');
+          const osEl = document.getElementById('skillsOsStatus');
+          if (ramEl && cfg.skills.statusInfo.ram) ramEl.innerText = `RAM: ${cfg.skills.statusInfo.ram}`;
+          if (osEl && cfg.skills.statusInfo.mode) osEl.innerText = `OS: ${cfg.skills.statusInfo.mode}`;
+        }
+      }
+
+      // 6. Contact Form
+      if (cfg.contact) {
+        const emailInput = document.querySelector('#win-contact input[readonly]');
+        if (emailInput && cfg.contact.recipientEmail) {
+          emailInput.value = cfg.contact.recipientEmail;
+        }
+        const formEl = document.querySelector('#win-contact form');
+        if (formEl && cfg.contact.formAction) {
+          formEl.action = cfg.contact.formAction;
+        }
+        if (cfg.contact.socialLinks && cfg.contact.socialLinks.length > 0) {
+          const sbEl = document.querySelector('#win-contact .window-statusbar');
+          if (sbEl) {
+            sbEl.innerHTML = cfg.contact.socialLinks.map(s => `
+              <span>GitHub: <a href="${s.url}" target="_blank" style="color: #000080;">${s.label}</a></span>
+            `).join(' | ');
+          }
+        }
+      }
+
+      // 7. Sticky Note (Bilingual)
+      if (cfg.stickyNote) {
+        const textEn = document.getElementById('stickyTextEn');
+        const textId = document.getElementById('stickyTextId');
+        if (textEn && cfg.stickyNote.en) {
+          textEn.innerHTML = `
+            <h4>${cfg.stickyNote.en.heading}</h4>
+            <p>${cfg.stickyNote.en.intro}</p>
+            <ul>
+              ${cfg.stickyNote.en.items.map(i => `<li>${i}</li>`).join('')}
+            </ul>
+            <div style="margin-top: 8px; font-size: 10px; color: #736214;">
+              <em>${cfg.stickyNote.en.tip}</em>
+            </div>
+          `;
+        }
+        if (textId && cfg.stickyNote.id) {
+          textId.innerHTML = `
+            <h4>${cfg.stickyNote.id.heading}</h4>
+            <p>${cfg.stickyNote.id.intro}</p>
+            <ul>
+              ${cfg.stickyNote.id.items.map(i => `<li>${i}</li>`).join('')}
+            </ul>
+            <div style="margin-top: 8px; font-size: 10px; color: #736214;">
+              <em>${cfg.stickyNote.id.tip}</em>
+            </div>
+          `;
+        }
+      }
+    })();
+
+    // Hook quick shockwave button if present
+    const quickBtn = document.getElementById('btnScrambleQuick');
+    if (quickBtn) {
+      quickBtn.addEventListener('click', () => {
+        window.RupaApp?.triggerScramble();
+      });
+    }
+  </script>
+</body>
+
+</html>
