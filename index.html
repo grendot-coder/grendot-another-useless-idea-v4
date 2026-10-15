@@ -436,12 +436,16 @@
         if (startIconSrc && startIconSrc.trim() !== '') {
           const startIconEl = document.getElementById('startBtnIcon');
           if (startIconEl) {
-            startIconEl.innerHTML = `<img src="${startIconSrc}" width="16" height="16" style="image-rendering: pixelated; object-fit: contain;" alt="Start" />`;
+            startIconEl.innerHTML = `<img src="${startIconSrc}" width="16" height="16" style="image-rendering: pixelated; object-fit: contain;" alt="Start" onerror="this.style.display='none'; console.warn('Failed loading image', this.src)" />`;
           }
         }
 
         if (cfg.images.logoMark && cfg.images.logoMark.trim() !== '') {
           document.querySelectorAll('.window-title-icon').forEach(img => {
+            img.onerror = function () {
+              console.warn('Failed loading image', this.src);
+              this.style.display = 'none';
+            };
             img.src = cfg.images.logoMark;
           });
         }
@@ -454,7 +458,7 @@
             if (customSrc && customSrc.trim() !== '') {
               const graphicEl = iconEl.querySelector('.icon-graphic');
               if (graphicEl) {
-                graphicEl.innerHTML = `<img src="${customSrc}" alt="${key}" />`;
+                graphicEl.innerHTML = `<img src="${customSrc}" alt="${key}" width="32" height="32" style="image-rendering: pixelated; object-fit: contain;" onerror="this.style.display='none'; console.warn('Failed loading image', this.src)" />`;
               }
             }
           });
@@ -482,7 +486,7 @@
         if (container) {
           container.innerHTML = cfg.projects.map(p => `
             <div class="project-card-win bevel-outset">
-              <img src="${p.image}" class="project-img-preview" alt="${p.title}" />
+              <img src="${p.image}" class="project-img-preview" alt="${p.title}" width="120" height="80" style="object-fit: cover;" onerror="this.style.display='none'; console.warn('Failed loading project image', this.src)" />
               <div class="project-details">
                 <h4>${p.title}</h4>
                 <p>${p.description}</p>
