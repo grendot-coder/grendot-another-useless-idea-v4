@@ -48,23 +48,21 @@ window.PORTFOLIO_CONFIG = {
   stickyNote: {
     en: {
       heading: "Quick Guide",
-      intro: "Weii! This site is my portofolio that is heavily inspired by <strong>Windows 3.1</strong> desktop environment:",
+      intro: "Welcome! This site is my portofolio that is heavily inspired by <strong>Windows 3.1</strong> desktop environment:",
       items: [
         "<strong>Single-Click:</strong> Click any desktop icon or window button to launch it.",
         "<strong>Move & Organize Note:</strong> Drag the note by its top bar.",
         "<strong>Start Menu:</strong> Access all shortcuts from the bottom-left <em>Start</em> button.",
-        "<strong>RUPA.EXE:</strong> Hover your mouse over Rupa to distort the live ASCII art matrix."
       ],
       tip: "Tip: Drag this note anywhere by its top bar!"
     },
     id: {
       heading: "Panduan Pengunjung",
-      intro: "Weii! Ini Web Portofolio saya yang sangat inspired-by <strong>Windows 3.1</strong> klasik:",
+      intro: "Sugeng Rawuh! Ini Web Portofolio saya yang sangat inspired-by tampilan dekstop<strong>Windows 3.1</strong> :",
       items: [
         "<strong>Klik Sekali:</strong> Klik ikon desktop atau menu untuk membuka aplikasi.",
         "<strong>Geser Notes:</strong> Tahan & geser bar judul diatas untuk memindahkan note ini.",
-        "<strong>Menu Start:</strong> Akses shortcuts seluruh menu dari tombol <em>Start</em> di kiri bawah.",
-        "<strong>RUPA.EXE:</strong> Gerakkan kursor ke Rupa untuk melihat efek distorsi partikel ASCII."
+        "<strong>Menu Start:</strong> Akses shortcuts seluruh menu dari tombol <em>Start</em> di kiri bawah.","
       ],
       tip: "Tips: Note ini bisa digeser dengan cara drag bagian atas!"
     }
