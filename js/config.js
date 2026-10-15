@@ -62,7 +62,7 @@ window.PORTFOLIO_CONFIG = {
       items: [
         "<strong>Klik Sekali:</strong> Klik ikon desktop atau menu untuk membuka aplikasi.",
         "<strong>Geser Notes:</strong> Tahan & geser bar judul diatas untuk memindahkan note ini.",
-        "<strong>Menu Start:</strong> Akses shortcuts seluruh menu dari tombol <em>Start</em> di kiri bawah.","
+        "<strong>Menu Start:</strong> Akses shortcuts seluruh menu dari tombol <em>Start</em> di kiri bawah.",
       ],
       tip: "Tips: Note ini bisa digeser dengan cara drag bagian atas!"
     }
