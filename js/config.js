@@ -1,4 +1,3 @@
-
 window.PORTFOLIO_CONFIG = {
 
   meta: {
@@ -13,7 +12,7 @@ window.PORTFOLIO_CONFIG = {
     startLogo: "img/window.png",                  
     heroPortrait: "img/rupa.png",   
     icons: {
-      about: "img/note.png",     /
+      about: "img/note.png",
       projects: "img/folder.png",  
       rupa: "img/ace.png",      
       skills: "img/cpl.png",    
@@ -144,4 +143,3 @@ window.PORTFOLIO_CONFIG = {
     ]
   }
 };
-
