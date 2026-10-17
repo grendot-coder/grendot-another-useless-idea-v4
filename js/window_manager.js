@@ -10,7 +10,7 @@ class Win31WindowManager {
     this.highestZ = 10;
     this.dragTarget = null;
     this.dragOffset = { x: 0, y: 0 };
-    
+
     this.initDOM();
     this.initGlobalEvents();
     this.updateClock();
@@ -23,12 +23,10 @@ class Win31WindowManager {
     this.startMenu = document.getElementById('startMenu');
     this.desktopArea = document.querySelector('.desktop-area');
 
-    // Register all initial windows
-    document.querySelectorAll('.window').forEach(winEl => {
+    document.querySelectorAll('.window, .window-frame, .app-window').forEach(winEl => {
       this.registerWindow(winEl);
     });
 
-    // Start Menu Toggle
     if (this.startBtn && this.startMenu) {
       this.startBtn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -40,11 +38,18 @@ class Win31WindowManager {
       });
 
       this.startMenu.addEventListener('click', (e) => {
-        e.stopPropagation();
+        const item = e.target.closest('.start-menu-item');
+        if (item) {
+          e.stopPropagation();
+          const targetId = item.getAttribute('data-target');
+          if (targetId) {
+            this.openWindow(targetId);
+          }
+          this.closeStartMenu();
+        }
       });
     }
 
-    // Desktop icons binding
     document.querySelectorAll('.desktop-icon').forEach(icon => {
       icon.addEventListener('click', () => {
         const targetId = icon.getAttribute('data-target');
@@ -54,7 +59,6 @@ class Win31WindowManager {
       });
     });
 
-    // Sticky Note Gadget Setup
     this.initStickyNote();
   }
 
@@ -98,10 +102,11 @@ class Win31WindowManager {
 
   registerWindow(winEl) {
     const id = winEl.id;
-    const titleText = winEl.querySelector('.window-title span')?.innerText || id;
+    if (!id) return;
+
+    const titleText = winEl.querySelector('.window-title span, .window-title-text')?.innerText || id;
     let iconSrc = winEl.querySelector('.window-title-icon')?.getAttribute('src') || '';
 
-    // If no window icon set, check if corresponding desktop icon has an image
     if (!iconSrc) {
       const desktopIconImg = document.querySelector(`.desktop-icon[data-target="${id}"] .icon-graphic img`);
       if (desktopIconImg) {
@@ -121,11 +126,10 @@ class Win31WindowManager {
 
     this.windows.set(id, winData);
 
-    // Setup window controls
     const titlebar = winEl.querySelector('.window-titlebar');
-    const minBtn = winEl.querySelector('.win-btn-min');
-    const maxBtn = winEl.querySelector('.win-btn-max');
-    const closeBtn = winEl.querySelector('.win-btn-close');
+    const minBtn = winEl.querySelector('.win-btn-min, .window-action[aria-label="Minimize"]');
+    const maxBtn = winEl.querySelector('.win-btn-max, .window-action[aria-label="Maximize"]');
+    const closeBtn = winEl.querySelector('.win-btn-close, .close-btn, .window-action[aria-label="Close"]');
 
     if (minBtn) {
       minBtn.addEventListener('click', (e) => {
@@ -148,15 +152,13 @@ class Win31WindowManager {
       });
     }
 
-    // Bring to front on click
     winEl.addEventListener('mousedown', () => {
       this.focusWindow(id);
     });
 
-    // Setup dragging via titlebar
     if (titlebar) {
       titlebar.addEventListener('mousedown', (e) => {
-        if (e.target.closest('.win-ctrl-btn')) return;
+        if (e.target.closest('.win-btn-min, .win-btn-max, .win-btn-close, .window-action, .close-btn')) return;
         this.startDrag(winEl, e);
       });
     }
@@ -184,7 +186,9 @@ class Win31WindowManager {
       }
     });
 
-    this.taskbarWindows.appendChild(item);
+    if (this.taskbarWindows) {
+      this.taskbarWindows.appendChild(item);
+    }
   }
 
   focusWindow(id) {
@@ -194,7 +198,6 @@ class Win31WindowManager {
     this.highestZ += 1;
     winData.el.style.zIndex = this.highestZ;
 
-    // Remove active state from all
     document.querySelectorAll('.window').forEach(w => w.classList.remove('active'));
     document.querySelectorAll('.taskbar-item').forEach(tb => tb.classList.remove('active'));
 
@@ -202,7 +205,7 @@ class Win31WindowManager {
     winData.el.classList.add('active');
     winData.isMinimized = false;
 
-    if (id === 'win-rupa' && window.RupaApp) {
+    if (id === 'asciiWindow' && window.RupaApp) {
       window.RupaApp.startLoop();
     }
 
@@ -272,7 +275,6 @@ class Win31WindowManager {
     if (!winData) return;
 
     if (winData.isMaximized) {
-      // Restore prev
       winData.el.classList.remove('maximized');
       if (winData.prevBounds) {
         winData.el.style.top = winData.prevBounds.top;
@@ -282,7 +284,6 @@ class Win31WindowManager {
       }
       winData.isMaximized = false;
     } else {
-      // Save bounds
       winData.prevBounds = {
         top: winData.el.style.top,
         left: winData.el.style.left,
@@ -319,7 +320,9 @@ class Win31WindowManager {
   }
 
   toggleStartMenu() {
-    this.startMenu.classList.toggle('open');
+    if (this.startMenu) {
+      this.startMenu.classList.toggle('open');
+    }
   }
 
   closeStartMenu() {
@@ -339,7 +342,6 @@ class Win31WindowManager {
   }
 }
 
-// Global instance exposed
 window.Win31 = null;
 document.addEventListener('DOMContentLoaded', () => {
   window.Win31 = new Win31WindowManager();
