@@ -9,7 +9,8 @@ window.PORTFOLIO_CONFIG = {
 
   meta: {
     title: "Grendy Agusti — Frontend & Fullstack Developer",
-    description: "Windows 3.1 Retro Portfolio of Grendy Agusti, a frontend & fullstack developer building thoughtful, interactive, and high-performance web experiences."
+    description: "Windows 3.1 Retro Portfolio of Grendy Agusti, a frontend & fullstack developer building thoughtful, interactive, and high-performance web experiences.",
+    favicon: "img/window.png"
   },
 
   /* ---------------------------------------------------------------------
@@ -159,3 +160,4 @@ window.PORTFOLIO_CONFIG = {
     ]
   }
 };
+
