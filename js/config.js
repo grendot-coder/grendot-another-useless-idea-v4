@@ -1,38 +1,27 @@
-/* =========================================================================
-   WINDOWS 3.1 RETRO PORTFOLIO CONFIG
-   -------------------------------------------------------------------------
-   All editable content lives here: text, links, projects, skills, principles,
-   and custom images. Any changes here immediately update the website.
-   ========================================================================= */
 
 window.PORTFOLIO_CONFIG = {
 
   meta: {
     title: "Grendy Agusti — Frontend & Fullstack Developer",
     description: "Windows 3.1 Retro Portfolio of Grendy Agusti, a frontend & fullstack developer building thoughtful, interactive, and high-performance web experiences.",
-    favicon: "img/window.png"
+    favicon: "img/favicon-32x32.png"
   },
 
-  /* ---------------------------------------------------------------------
-     IMAGES & ICONS
-     Change paths here or leave as "" to keep default retro graphics.
-  --------------------------------------------------------------------- */
+
   images: {
-    logoMark: "img/window.png",      // Window titlebar & badge icon
-    startLogo: "img/window.png",                  // Logo on 'Start' button (e.g. "img/window.png" or leave "" for 4-color retro flag)
-    heroPortrait: "img/rupa.png",   // Character portrait
+    logoMark: "img/window.png",     
+    startLogo: "img/window.png",                  
+    heroPortrait: "img/rupa.png",   
     icons: {
-      about: "img/note.png",     // Notepad / About Me desktop icon (e.g. "img/grendy.jpg")
-      projects: "img/folder.png",  // Folder / Projects desktop icon
-      rupa: "img/ace.png",      // RUPA.EXE icon (kept default unless specified)
-      skills: "img/cpl.png",    // Control panel / Skills desktop icon
-      contact: "img/mail.png"    // Mail / Contact desktop icon
+      about: "img/note.png",     /
+      projects: "img/folder.png",  
+      rupa: "img/ace.png",      
+      skills: "img/cpl.png",    
+      contact: "img/mail.png"    
     }
   },
 
-  /* ---------------------------------------------------------------------
-     ABOUT ME (NOTEPAD: ABOUT_ME.TXT)
-  --------------------------------------------------------------------- */
+
   about: {
     title: "Notepad - ABOUT_ME.TXT",
     name: "GRENDY ARVEL PUTRA AGUSTI",
@@ -43,9 +32,7 @@ window.PORTFOLIO_CONFIG = {
     buttonLabel: "Explore Projects >>"
   },
 
-  /* ---------------------------------------------------------------------
-     POST-IT STICKY NOTE INSTRUCTIONS (BILINGUAL)
-  --------------------------------------------------------------------- */
+
   stickyNote: {
     en: {
       heading: "Quick Guide",
@@ -69,10 +56,7 @@ window.PORTFOLIO_CONFIG = {
     }
   },
 
-  /* ---------------------------------------------------------------------
-     PROJECTS (FILE MANAGER: C:\PROJECTS\*.*)
-     Add, remove, or edit your projects here.
-  --------------------------------------------------------------------- */
+
   projects: [
     {
       id: "p1",
